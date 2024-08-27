@@ -7,7 +7,7 @@ function repainting(input){
     let paintNeeded = (Number(input[1]) * paintPrice ) * 1.10;
     let thinnerNeeded = Number(input[2]) * paintThinnerPrice;
     let hoursWork = Number(input[3]);
-
+ 
     let totalMaterialPrice = 0.40;
 
     totalMaterialPrice += nylonNeeded + paintNeeded + thinnerNeeded;
