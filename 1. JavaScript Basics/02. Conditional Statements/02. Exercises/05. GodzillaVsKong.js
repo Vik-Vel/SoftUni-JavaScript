@@ -6,14 +6,16 @@ function godzillaVsKong(input){
     
     
 
-    let price = numOfStatists * priceClothPerStatist + decor;
+    let price = numOfStatists * priceClothPerStatist;
     if(numOfStatists > 150){
-        priceClothPerStatist *= 0.9;
+        price *= 0.9;
     }
-    
+
+    price += decor;
+
     if(price > budget){
         console.log('Not enough money!');
-        console.log(`Wingard needs ${Math.abs((budget-price).toFixed(2))} leva more.`)
+        console.log(`Wingard needs ${((price-budget).toFixed(2))} leva more.`)
     }
     else{
         console.log('Action!');
