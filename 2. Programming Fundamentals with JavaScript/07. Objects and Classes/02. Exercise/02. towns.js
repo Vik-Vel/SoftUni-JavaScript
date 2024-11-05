@@ -1,4 +1,4 @@
-function towns(){
+function towns(arr){
     for(let townInfoStr of arr){
         let [town, latitude, longitude]= townInfoStr.split(' | '); //In this way we will set whatever is at first index will be city, at second index will be latitude and at third will be longitude
         latitude = Number(latitude); //We say that the latitude will be a number
@@ -19,3 +19,7 @@ function towns(){
         console.log(townInfoObj)
     }
 }
+
+towns(['Sofia | 42.696552 | 23.32601',
+    'Beijing | 39.913818 | 116.363625']
+    )
