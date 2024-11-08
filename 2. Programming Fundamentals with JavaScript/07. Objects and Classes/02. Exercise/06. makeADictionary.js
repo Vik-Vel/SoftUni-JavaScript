@@ -1,22 +1,19 @@
-function makeADictionary(input){
-    let dictionary = [];
+function makeADictionary(input) {
+    let dictionary = {};
 
     for (let i = 0; i < input.length; i++) {
-        let parsed = JSON.parse(input[i]); // parsed is an object after JSON.parse(input[i]) and doesn't need split; we directly access the key and value.
-        let product = Object.keys(parsed)[0];
-        let definition = parsed[product];
+        let parsed = JSON.parse(input[i]); // Парсваме JSON и получаваме обект с един ключ и една стойност
+        let term = Object.keys(parsed)[0];
+        let definition = parsed[term];
 
-        let term = {
-            term : product,
-            definition: definition
-        };
-
-        dictionary.push(term);
+        dictionary[term] = definition; // Ако терминът съществува, ще презапише дефиницията
     }
 
-    dictionary.sort((a,b) => a.term.localeCompare(b.term));
-    for(let dict of dictionary){
-        console.log(`Term: ${dict.term} => Definition: ${dict.definition}`);
+    // Сортираме и печатаме термините по азбучен ред
+    let sortedTerms = Object.keys(dictionary).sort((a, b) => a.localeCompare(b));
+
+    for (let term of sortedTerms) {
+        console.log(`Term: ${term} => Definition: ${dictionary[term]}`);
     }
 }
 
