@@ -8,7 +8,7 @@ function fancyBarcode(input){
         // Check if the barcode is valid
         if (pattern.test(barcode)) {
             // Extract digits from the barcode
-            let productGroupMatch = barcode.match(/\d+/g);
+            let productGroupMatch = barcode.match(/\d+/g); //Check if the matched string have digits
             let productGroup = productGroupMatch ? productGroupMatch.join('') : '00';
 
             console.log(`Product group: ${productGroup}`);
